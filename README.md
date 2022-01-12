@@ -1,3 +1,4 @@
 # beomsoekchoi
 
-My portfolio site
+My portfolio website
+
