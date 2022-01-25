@@ -37,6 +37,8 @@ footer, header, hgroup, main, menu, nav, section {
 body {
   line-height: 1;
   font-family: "Montserrat", sans-serif;
+  background-color:#f4dfba;
+
 }
 menu, ol, ul {
   list-style: none;

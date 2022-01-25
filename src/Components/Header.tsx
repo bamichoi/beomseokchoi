@@ -6,26 +6,34 @@ const Nav = styled.nav`
   width: 100%;
   display: flex;
   padding: 10px 10px;
+  padding-left: 5px;
   justify-content: space-between;
   align-items: flex-start;
   background-color: #f4dfba;
+  border-left: 20px solid #876445;
 `;
 
 const Menu = styled.ul`
-  padding-right: 2.5px;
+  padding-right: 5px;
 `;
 
 const Logo = styled.div`
   padding-left: 2.5px;
   div:first-child {
     font-size: 20px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 2px;
   }
   div:last-child {
     font-size: 13px;
+    text-align: center;
   }
 `;
 
 const Social = styled.div`
+  border-bottom: 3px solid #eec373;
   i {
     margin-left: 5px;
   }
@@ -46,10 +54,9 @@ const Pointer = styled(motion.div)`
   width: 7px;
   height: 7px;
   margin-right: 5px;
-
   background-color: #ca965c;
   position: absolute;
-  left: -10px;
+  left: -14px;
 `;
 
 function Header() {
