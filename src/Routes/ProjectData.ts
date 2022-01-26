@@ -1,4 +1,5 @@
 interface IProjectData {
+  id: number;
   name: string;
   year: string;
   period: string;
@@ -15,6 +16,7 @@ interface IProject {
 export const ProjectData: IProject = {
   projects: [
     {
+      id: 1,
       name: "CINEACCA",
       year: "2021",
       period: "5 months",
