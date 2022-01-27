@@ -51,14 +51,39 @@ const Overlay = styled(motion.div)`
 `;
 
 const ProjectCard = styled(motion.div)`
-  position: fixed;
-  width: 300px;
-  height: 200px;
+  position: absolute;
+  width: 680px;
+  height: 50vh;
   left: 0;
   right: 0;
   margin: 0 auto;
-  background-color: white;
   z-index: 5;
+`;
+
+const VideoArea = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+const TextArea = styled.div`
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  a {
+    margin-bottom: 5px;
+    text-decoration: underline;
+  }
+  span {
+    margin-bottom: 5px;
+  }
+  span:first-child {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
 `;
 
 function Projects() {
@@ -71,7 +96,11 @@ function Projects() {
   const onOverlayClicked = () => {
     navigate("/projects");
   };
-
+  const clickedProject =
+    projectMatch?.params.projectId &&
+    ProjectData.projects.find(
+      (project) => project.id + "" === projectMatch.params.projectId
+    );
   return (
     <Wrapper>
       <SideContainer>
@@ -98,8 +127,39 @@ function Projects() {
           <>
             <ProjectCard
               layoutId={projectMatch.params.projectId}
-              style={{ top: scrollY.get() + 200 }}
-            ></ProjectCard>
+              style={{ top: scrollY.get() + 100 }}
+            >
+              {clickedProject && (
+                <>
+                  <VideoArea
+                    style={{
+                      backgroundImage: `url(${clickedProject.thumb})`,
+                      backgroundPosition: "center center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }}
+                  />
+                  <TextArea>
+                    <span>CINEACCA</span>
+                    <a
+                      href="https://cineacca.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      cineacca.com
+                    </a>
+                    <span>Student film streaming plattform</span>
+                    <span>
+                      {clickedProject.lang.map((item, index) =>
+                        clickedProject.lang.length - 1 === index
+                          ? `${item}`
+                          : `${item}, `
+                      )}
+                    </span>
+                  </TextArea>
+                </>
+              )}
+            </ProjectCard>
             <Overlay
               onClick={onOverlayClicked}
               animate={{ opacity: 1 }}
