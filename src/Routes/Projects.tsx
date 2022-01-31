@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import styled from "styled-components";
 import { AnimatePresence, motion, useViewportScroll } from "framer-motion";
 import { useNavigate, useMatch } from "react-router-dom";
@@ -6,11 +5,14 @@ import { ProjectData } from "./ProjectData";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  padding-top: 120px;
+  height: 1000vh;
   display: flex;
 `;
 
-const SideContainer = styled.div``;
+const SideContainer = styled.div`
+  position: fixed;
+`;
 
 const Title = styled.div`
   font-size: 60px;
@@ -25,6 +27,12 @@ const Main = styled.div`
 
 const ProjectGrid = styled.div`
   display: grid;
+  position: absolute;
+  right: 0;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 100px;
 `;
 
 const ProjectItem = styled(motion.div)`

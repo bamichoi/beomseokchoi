@@ -11,6 +11,8 @@ const Nav = styled.nav`
   align-items: flex-start;
   background-color: #f4dfba;
   border-left: 20px solid #876445;
+  position: fixed;
+  z-index: 99;
 `;
 
 const Menu = styled.ul`
