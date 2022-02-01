@@ -8,6 +8,7 @@ interface IStudyData {
   projectUrl: string;
   thumb: string;
   academy: string;
+  academyUrl: string;
 }
 
 interface IStudy {
@@ -18,7 +19,7 @@ export const StudyData: IStudy = {
   studies: [
     {
       id: 1,
-      title: "KokoaTalk Clone Challenge",
+      title: "KokoaTalk Challenge",
       summary: "Cloning KakaoTalk UI with HTML5, CSS3",
       skills: ["HTML5", "CSS3", "Flexbox", "Github"],
       period: "2 weeks",
@@ -26,6 +27,56 @@ export const StudyData: IStudy = {
       projectUrl: "",
       thumb: "",
       academy: "Nomad Coders",
+      academyUrl: "https://nomadcoders.co/",
+    },
+    {
+      id: 2,
+      title: "Vanilla JS Challenge",
+      summary:
+        "Cloning 'Momentum', a Chrome App, using HTML5, CSS3 and Vanila JS",
+      skills: ["Vanilla JS"],
+      period: "2 weeks",
+      date: "Feb 1 2021",
+      projectUrl: "",
+      thumb: "",
+      academy: "Nomad Coders",
+      academyUrl: "https://nomadcoders.co/",
+    },
+    {
+      id: 3,
+      title: "Python Challenge",
+      summary: "Creating web scrapper to find a job using Python",
+      skills: ["Python, Flask, BeautifulSoup"],
+      period: "2 weeks",
+      date: "Mar 15 2021",
+      projectUrl: "",
+      thumb: "",
+      academy: "Nomad Coders",
+      academyUrl: "https://nomadcoders.co/",
+    },
+    {
+      id: 4,
+      title: "Youtube Clone Challenge",
+      summary: "Cloning Youtube with Node.js",
+      skills: ["Node", "Express", "Pug", "MongoDB"],
+      period: "6 weeks",
+      date: "Nov 1 2021",
+      projectUrl: "",
+      thumb: "",
+      academy: "Nomad Coders",
+      academyUrl: "https://nomadcoders.co/",
+    },
+    {
+      id: 5,
+      title: "React.js Challenge",
+      summary: "Cloning Frontend of Netflix using React.js",
+      skills: ["React", "Hooks"],
+      period: "2 weeks",
+      date: "Dec 26 2021",
+      projectUrl: "",
+      thumb: "",
+      academy: "Nomad Coders",
+      academyUrl: "https://nomadcoders.co/",
     },
   ],
 };

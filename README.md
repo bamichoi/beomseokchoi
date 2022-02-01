@@ -9,12 +9,11 @@ My portfolio website
 ## Router 
 
 - [ ] Home
-- [ ] Portfolio(PROJECTS)
+- [ ] Projects
+- [ ] Studies
 - [ ] About
 - [ ] Contact
-- [ ] Education
+
 
 
 ## idea
-
-신문컨셉

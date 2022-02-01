@@ -59,7 +59,7 @@ const Overlay = styled(motion.div)`
 `;
 
 const ProjectCard = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   width: 680px;
   height: 50vh;
   left: 0;
@@ -135,7 +135,7 @@ function Projects() {
           <>
             <ProjectCard
               layoutId={projectMatch.params.projectId}
-              style={{ top: scrollY.get() + 100 }}
+              style={{ top: scrollY.get() + 180 }}
             >
               {clickedProject && (
                 <>
