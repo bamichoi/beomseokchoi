@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { StudyData } from "./StudyData";
-import { useEffect, useRef } from "react";
+import { ParentsVariants, ParentsTransition } from "./Projects";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-const SideContainer = styled.div`
+const SideContainer = styled(motion.div)`
   position: fixed;
 `;
 
@@ -72,19 +72,28 @@ const StudyItemVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
   },
   hidden: {
     opacity: 0,
     scale: 0.8,
+    transition: {
+      duration: 1,
+    },
   },
 };
 
 function Studies() {
   return (
     <Wrapper>
-      <SideContainer>
+      <SideContainer
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={ParentsVariants}
+        transition={ParentsTransition}
+      >
         <Title>studies_</Title>
         <SideNav></SideNav>
       </SideContainer>

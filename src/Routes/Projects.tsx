@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-const SideContainer = styled.div`
+const SideContainer = styled(motion.div)`
   position: fixed;
 `;
 
@@ -21,11 +21,11 @@ const Title = styled.div`
 
 const SideNav = styled.div``;
 
-const Main = styled.div`
+const Main = styled(motion.div)`
   padding: 50px 20px 20px 100px;
 `;
 
-const ProjectGrid = styled.div`
+const ProjectGrid = styled(motion.div)`
   display: grid;
   position: absolute;
   right: 0;
@@ -56,6 +56,7 @@ const Overlay = styled(motion.div)`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
+  z-index: 11;
 `;
 
 const ProjectCard = styled(motion.div)`
@@ -65,7 +66,7 @@ const ProjectCard = styled(motion.div)`
   left: 0;
   right: 0;
   margin: 0 auto;
-  z-index: 5;
+  z-index: 12;
 `;
 
 const VideoArea = styled.div`
@@ -94,6 +95,22 @@ const TextArea = styled.div`
   }
 `;
 
+export const ParentsVariants = {
+  in: {
+    opacity: 1,
+    y: 0,
+  },
+  out: {
+    opacity: 0,
+    y: "50%",
+  },
+};
+
+export const ParentsTransition = {
+  duration: 0.8,
+  delayChildren: 2,
+};
+
 function Projects() {
   const navigate = useNavigate();
   const projectMatch = useMatch("/projects/:projectId");
@@ -111,12 +128,24 @@ function Projects() {
     );
   return (
     <Wrapper>
-      <SideContainer>
+      <SideContainer
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={ParentsVariants}
+        transition={ParentsTransition}
+      >
         <Title>projects_</Title>
         <SideNav></SideNav>
       </SideContainer>
       <Main>
-        <ProjectGrid>
+        <ProjectGrid
+          initial="out"
+          animate="in"
+          exit="out"
+          variants={ParentsVariants}
+          transition={ParentsTransition}
+        >
           {ProjectData.projects.map((project) => (
             <ProjectItem
               key={project.id}
@@ -135,7 +164,7 @@ function Projects() {
           <>
             <ProjectCard
               layoutId={projectMatch.params.projectId}
-              style={{ top: scrollY.get() + 180 }}
+              style={{ top: scrollY.get() + 100 }}
             >
               {clickedProject && (
                 <>

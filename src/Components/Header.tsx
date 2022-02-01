@@ -12,7 +12,7 @@ const Nav = styled.nav`
   background-color: #f4dfba;
   border-left: 20px solid #876445;
   position: fixed;
-  z-index: 99;
+  z-index: 10;
 `;
 
 const Menu = styled.ul`
