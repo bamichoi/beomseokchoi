@@ -6,7 +6,6 @@ import { ProjectData } from "./ProjectData";
 const Wrapper = styled.div`
   width: 100%;
   padding-top: 120px;
-  height: 1000vh;
   display: flex;
 `;
 

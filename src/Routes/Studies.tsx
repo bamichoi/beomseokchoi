@@ -6,7 +6,6 @@ import { ParentsVariants, ParentsTransition } from "./Projects";
 const Wrapper = styled.div`
   width: 100%;
   padding-top: 120px;
-  height: 1000vh;
   display: flex;
 `;
 
@@ -105,6 +104,7 @@ function Studies() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
+              exit="hidden"
               variants={StudyItemVariants}
             >
               <a href={study.projectUrl}>
