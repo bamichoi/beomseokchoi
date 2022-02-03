@@ -9,9 +9,9 @@ My portfolio website
 ## Router 
 
 - [ ] Home
-- [ ] Projects
-- [ ] Studies
-- [ ] About
+- [x] Projects
+- [x] Studies
+- [x] About
 - [ ] Contact
 
 

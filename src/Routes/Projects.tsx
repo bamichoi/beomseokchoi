@@ -21,6 +21,7 @@ const Title = styled.div`
 const SideNav = styled.div``;
 
 const Main = styled(motion.div)`
+  width: 100%;
   padding: 50px 20px 20px 100px;
 `;
 

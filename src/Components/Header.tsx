@@ -76,10 +76,34 @@ function Header() {
         </Logo>
       </Link>
       <Social>
-        <i className="fab fa-linkedin"></i>
-        <i className="fab fa-facebook-square"></i>
-        <i className="fab fa-instagram-square"></i>
-        <i className="fab fa-github"></i>
+        <a
+          href="https://www.linkedin.com/in/beomseok-choi-02b9a0228/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-linkedin"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=100059771932658"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-facebook-square"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/this_is_bami/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-instagram-square"></i>
+        </a>
+        <a
+          href="https://github.com/bamichoi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-github"></i>
+        </a>
       </Social>
       <Copy>&copy; 2022</Copy>
       <Menu>

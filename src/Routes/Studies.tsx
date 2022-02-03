@@ -107,7 +107,11 @@ function Studies() {
               exit="hidden"
               variants={StudyItemVariants}
             >
-              <a href={study.projectUrl}>
+              <a
+                href={study.projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <h1>{study.title}</h1>
               </a>
               <h2>{study.summary}</h2>

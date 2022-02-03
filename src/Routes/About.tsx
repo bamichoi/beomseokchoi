@@ -79,6 +79,7 @@ const Skills = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
   div {
     width: 60px;
     height: 60px;
@@ -166,6 +167,8 @@ function About() {
               }}
             ></div>
           </Skills>
+          <span>"Learn the rules like a pro,</span>
+          <span>so you can break them like an artist."</span>
         </Skillset>
       </Main>
     </Wrapper>
