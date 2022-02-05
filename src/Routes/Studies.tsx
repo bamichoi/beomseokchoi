@@ -120,7 +120,7 @@ function Studies() {
               </a>
               <span>period: {study.period}</span>
               <span>
-                skills:
+                skills:&nbsp;
                 {study.skills.map((skill, index) =>
                   study.skills.length - 1 === index ? `${skill}` : `${skill}, `
                 )}

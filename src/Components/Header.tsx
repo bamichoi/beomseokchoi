@@ -39,6 +39,9 @@ const Social = styled.div`
   i {
     margin-left: 5px;
   }
+  i:hover {
+    color: #f4deba;
+  }
 `;
 const Copy = styled.div`
   font-size: 12px;
