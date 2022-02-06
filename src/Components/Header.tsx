@@ -75,7 +75,7 @@ function Header() {
       <Link to="/">
         <Logo>
           <div>Beomseok Choi</div>
-          <div>/ software developer</div>
+          <div>/ software engineer</div>
         </Logo>
       </Link>
       <Social>

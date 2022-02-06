@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { motion, useMotionValue } from "framer-motion";
-import { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { ParentsVariants, ParentsTransition } from "./Projects";
+import TypeIt from "typeit-react";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -12,12 +14,33 @@ const Main = styled.div`
   height: 100%;
   padding-top: 150px;
   display: flex;
+  overflow-y: hidden;
+`;
+
+const Greeting = styled(motion.div)`
+  width: 50%;
+  padding: 10px;
+
+  h1 {
+    font-size: 60px;
+    line-height: 80px;
+  }
+`;
+
+const TurnTable = styled(motion.div)`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  position: relative;
   justify-content: center;
-  align-items: center;
 `;
 
 const Controller = styled.div`
+  width: fit-content;
   display: flex;
+  position: absolute;
+  left: 0;
+  margin-top: 230px;
   flex-direction: column;
   i {
     margin-bottom: 10px;
@@ -29,6 +52,8 @@ const Stylus = styled(motion.div)`
   width: fit-content;
   position: absolute;
   bottom: 0;
+  left: 0;
+  margin: auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,6 +85,18 @@ const Stylus = styled(motion.div)`
   }
 `;
 
+const Circle = styled(motion.div)`
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin-right: 10px;
+  border-radius: 300px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const CircleOverlay = styled.div`
   width: 600px;
   height: 600px;
@@ -74,20 +111,6 @@ const CircleOverlay = styled.div`
   opacity: 1;
 `;
 
-const Circle = styled(motion.div)`
-  position: absolute;
-  right: 0;
-  margin-bottom: 80px;
-  margin-right: 80px;
-  width: 600px;
-  height: 600px;
-  border-radius: 300px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const Circle2 = styled.div`
   position: absolute;
   width: 350px;
@@ -100,7 +123,6 @@ const Circle2 = styled.div`
 `;
 
 const Circle3 = styled.div`
-  position: absolute;
   width: 300px;
   height: 300px;
   border-radius: 150px;
@@ -111,54 +133,174 @@ const Circle3 = styled.div`
 `;
 
 const CircleVariant = {
-  start: {
+  play: {
     rotate: 360,
     transition: {
-      delay: 0.5,
+      delay: 1,
       repeat: Infinity,
       repeatDelay: 0,
-      duration: 3,
+      duration: 1.5,
       ease: "linear",
+    },
+  },
+  pause: {
+    rotate: 0,
+    transition: {
+      duration: 3,
+    },
+  },
+  stop: {
+    rotate: 0,
+    transition: {
+      duration: 3,
     },
   },
 };
 
-const StylusVariant = {
-  play: {
+const StylusVariants = {
+  start: {
     rotateZ: 9,
+    scale: [1, 1, 1, 1, 0.97],
     transition: {
-      repeatDelay: 0,
       duration: 3,
       ease: "linear",
+    },
+  },
+  play: {
+    rotateZ: 21,
+    transition: {
+      duration: 60,
+      ease: "linear",
+    },
+  },
+  stop: {
+    rotateZ: 0,
+    scale: [0.97, 1, 1, 1, 1],
+    transition: {
+      duration: 3,
     },
   },
 };
 function Home() {
-  const [onPlay, setOnPlay] = useState();
-
+  const [onPlay, setOnPlay] = useState("onReady");
+  const [trackNumber, setTrackNumber] = useState(0);
+  const stylusControls = useAnimation();
+  useEffect(() => {
+    stylusControls.start("start");
+    setTimeout(() => {
+      setTrackNumber(1);
+      stylusControls.stop();
+      stylusControls.start("play");
+    }, 3000);
+  }, [stylusControls]);
+  const clickPlay = () => {
+    stylusControls.start("play");
+    setOnPlay("onPlay");
+  };
+  const clickPause = () => {
+    stylusControls.stop();
+    setOnPlay("onPause");
+  };
+  const clickStop = () => {
+    stylusControls.start("stop");
+    setOnPlay("onStop");
+  };
+  const clickPrev = () => {
+    if (trackNumber > 1) {
+      stylusControls.start({
+        rotateZ: trackNumber * 4 + 1,
+        scale: [0.97, 1, 1, 1, 0.97],
+        transition: {
+          duration: 1.5,
+        },
+      });
+      setTrackNumber((prev) => prev - 1);
+      setTimeout(() => {
+        console.log("Playing after Next ");
+        clickPlay();
+      }, 1500);
+    }
+  };
+  const clickNext = () => {
+    if (trackNumber < 3) {
+      stylusControls.start({
+        rotateZ: trackNumber * 4 + 9,
+        scale: [0.97, 1, 1, 1, 0.97],
+        transition: {
+          duration: 1.5,
+        },
+      });
+      setTrackNumber((prev) => prev + 1);
+      setTimeout(() => {
+        console.log("Playing after Next ");
+        clickPlay();
+      }, 1500);
+    }
+  };
   return (
     <Wrapper>
       <Main>
-        <Controller>
-          <i className="fas fa-backward"></i>
-          <i className="fas fa-play"></i>
-          <i className="fas fa-pause"></i>
-          <i className="fas fa-stop"></i>
-          <i className="fas fa-forward"></i>
-        </Controller>
-        <Stylus variants={StylusVariant} animate="play">
-          <div className="stylus_header"></div>
-          <div className="stylus_arm"></div>
-        </Stylus>
-        {/* Make indipendent this Vinyl Component */}
-        <Circle variants={CircleVariant} animate="start">
-          <CircleOverlay> </CircleOverlay>
-          <Circle2>
-            <Circle3>
-              <span className="circleText">What's new?</span>
-            </Circle3>
-          </Circle2>
-        </Circle>
+        <Greeting
+          initial="out"
+          animate="in"
+          exit="out"
+          variants={ParentsVariants}
+          transition={ParentsTransition}
+        >
+          <h1>
+            <TypeIt
+              getBeforeInit={(instance) => {
+                instance
+                  .type("", { delay: 1000 })
+                  .type("Hi, This is Bami.")
+                  .break()
+                  .type("And You're Watching My Portfolio Website.")
+                  .break();
+                // Remember to return it!
+                return instance;
+              }}
+            />
+          </h1>
+          <span></span>
+        </Greeting>
+        <TurnTable
+          initial="out"
+          animate="in"
+          exit="out"
+          variants={ParentsVariants}
+          transition={ParentsTransition}
+        >
+          <Controller>
+            <i className="fas fa-backward" onClick={clickPrev}></i>
+            <i className="fas fa-play" onClick={clickPlay}></i>
+            <i className="fas fa-pause" onClick={clickPause}></i>
+            <i className="fas fa-stop" onClick={clickStop}></i>
+            <i className="fas fa-forward" onClick={clickNext}></i>
+          </Controller>
+          <Stylus variants={StylusVariants} animate={stylusControls}>
+            <div className="stylus_header"></div>
+            <div className="stylus_arm"></div>
+          </Stylus>
+          <Circle
+            variants={CircleVariant}
+            animate={
+              onPlay === "onPlay" || onPlay === "onReady"
+                ? "play"
+                : onPlay === "onPause"
+                ? "pause"
+                : onPlay === "onStop"
+                ? "stop"
+                : ""
+            }
+          >
+            <CircleOverlay></CircleOverlay>
+            <Circle2>
+              <Circle3>
+                <span className="circleText">What's new?</span>
+              </Circle3>
+            </Circle2>
+          </Circle>
+        </TurnTable>
       </Main>
     </Wrapper>
   );
