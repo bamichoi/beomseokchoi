@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ParentsVariants, ParentsTransition } from "./Projects";
 import TypeIt from "typeit-react";
 
@@ -238,9 +238,10 @@ function Home() {
     }
   };
   return (
-    <Wrapper>
-      <Main>
+    <Wrapper className="wrapper">
+      <Main className="home-main">
         <Greeting
+          className="home_greeting"
           initial="out"
           animate="in"
           exit="out"
@@ -264,24 +265,30 @@ function Home() {
           <span></span>
         </Greeting>
         <TurnTable
+          className="home_turntable"
           initial="out"
           animate="in"
           exit="out"
           variants={ParentsVariants}
           transition={ParentsTransition}
         >
-          <Controller>
+          <Controller className="turntable_controller">
             <i className="fas fa-backward" onClick={clickPrev}></i>
             <i className="fas fa-play" onClick={clickPlay}></i>
             <i className="fas fa-pause" onClick={clickPause}></i>
             <i className="fas fa-stop" onClick={clickStop}></i>
             <i className="fas fa-forward" onClick={clickNext}></i>
           </Controller>
-          <Stylus variants={StylusVariants} animate={stylusControls}>
+          <Stylus
+            className="turntable_stylus"
+            variants={StylusVariants}
+            animate={stylusControls}
+          >
             <div className="stylus_header"></div>
             <div className="stylus_arm"></div>
           </Stylus>
           <Circle
+            className="turntable_circle"
             variants={CircleVariant}
             animate={
               onPlay === "onPlay" || onPlay === "onReady"
@@ -293,9 +300,9 @@ function Home() {
                 : ""
             }
           >
-            <CircleOverlay></CircleOverlay>
-            <Circle2>
-              <Circle3>
+            <CircleOverlay className="circle-overlay"></CircleOverlay>
+            <Circle2 className="circle2">
+              <Circle3 className="circle3">
                 <span className="circleText">What's new?</span>
               </Circle3>
             </Circle2>

@@ -85,21 +85,23 @@ const StudyItemVariants = {
 
 function Studies() {
   return (
-    <Wrapper>
+    <Wrapper className="wrapper">
       <SideContainer
+        className="side-container"
         initial="out"
         animate="in"
         exit="out"
         variants={ParentsVariants}
         transition={ParentsTransition}
       >
-        <Title>studies_</Title>
+        <Title className="side_title">studies_</Title>
         <SideNav></SideNav>
       </SideContainer>
-      <Main>
-        <StudiesBox>
+      <Main className="main">
+        <StudiesBox className="main_studies">
           {[...StudyData.studies].reverse().map((study) => (
             <StudyItem
+              className="studies_item"
               key={study.id}
               initial="hidden"
               whileInView="visible"

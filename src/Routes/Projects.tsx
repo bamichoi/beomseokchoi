@@ -72,6 +72,9 @@ const ProjectCard = styled(motion.div)`
 const VideoArea = styled.div`
   width: 100%;
   height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const TextArea = styled.div`
@@ -127,19 +130,21 @@ function Projects() {
       (project) => project.id + "" === projectMatch.params.projectId
     );
   return (
-    <Wrapper>
+    <Wrapper className="wrapper">
       <SideContainer
+        className="side-container"
         initial="out"
         animate="in"
         exit="out"
         variants={ParentsVariants}
         transition={ParentsTransition}
       >
-        <Title>projects_</Title>
+        <Title className="side_title">projects_</Title>
         <SideNav></SideNav>
       </SideContainer>
-      <Main>
+      <Main className="main">
         <ProjectGrid
+          className="main_project-grid"
           initial="out"
           animate="in"
           exit="out"
@@ -148,12 +153,13 @@ function Projects() {
         >
           {ProjectData.projects.map((project) => (
             <ProjectItem
+              className="pj"
               key={project.id}
               layoutId={project.id + ""}
               whileHover={{ scale: 1.2 }}
               onClick={() => onItemClicked(project.id)}
             >
-              <ProjectIcon src={`${project.icon}`} alt="" />
+              <ProjectIcon className="pj_icon" src={`${project.icon}`} alt="" />
               <span>{project.name}</span>
             </ProjectItem>
           ))}
@@ -163,20 +169,19 @@ function Projects() {
         {projectMatch ? (
           <>
             <ProjectCard
+              className="pj_card"
               layoutId={projectMatch.params.projectId}
               style={{ top: scrollY.get() + 100 }}
             >
               {clickedProject && (
                 <>
                   <VideoArea
+                    className="pj_card_video"
                     style={{
                       backgroundImage: `url(${clickedProject.thumb})`,
-                      backgroundPosition: "center center",
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
                     }}
                   />
-                  <TextArea>
+                  <TextArea className="pj_card_text">
                     <span>CINEACCA</span>
                     <a
                       href="https://cineacca.com"

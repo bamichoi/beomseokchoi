@@ -97,19 +97,21 @@ const Skills = styled.div`
 
 function About() {
   return (
-    <Wrapper>
+    <Wrapper className="wrapper">
       <SideContainer
+        className="side-container"
         initial="out"
         animate="in"
         exit="out"
         variants={ParentsVariants}
         transition={ParentsTransition}
       >
-        <Title>about_</Title>
+        <Title className="side_title">about_</Title>
         <SideNav></SideNav>
       </SideContainer>
-      <Main>
+      <Main className="main contact-main">
         <Profile
+          className="main_profile"
           initial="out"
           animate="in"
           exit="out"
@@ -117,11 +119,12 @@ function About() {
           transition={ParentsTransition}
         >
           <ProfileImg
+            className="profile_img"
             style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/img/profile.jpeg)`,
+              backgroundImage: `url(${process.env.PUBLIC_URL}/img/catpaw.jpeg)`,
             }}
           ></ProfileImg>
-          <Bio>
+          <Bio className="profile_bio">
             <h1>Hi! This is Bami!</h1>
             <p>Thank you for your visit to my portfolio website!</p>
             <p>I have been studied development for 1 year.</p>
@@ -133,6 +136,7 @@ function About() {
           </Bio>
         </Profile>
         <Skillset
+          className="skillset"
           initial="out"
           animate="in"
           exit="out"
@@ -140,7 +144,7 @@ function About() {
           transition={ParentsTransition}
         >
           <h1>skillset</h1>
-          <Skills>
+          <Skills className="skillset_skills">
             <div
               style={{
                 backgroundImage: `url(${process.env.PUBLIC_URL}/img/skills/javascript.png)`,

@@ -71,14 +71,14 @@ function Header() {
   const contactMatch = useMatch("/contact");
 
   return (
-    <Nav>
+    <Nav className="nav">
       <Link to="/">
-        <Logo>
+        <Logo className="nav_logo">
           <div>Beomseok Choi</div>
           <div>/ software engineer</div>
         </Logo>
       </Link>
-      <Social>
+      <Social className="nav_social">
         <a
           href="https://www.linkedin.com/in/beomseok-choi-02b9a0228/"
           target="_blank"
@@ -108,28 +108,28 @@ function Header() {
           <i className="fab fa-github"></i>
         </a>
       </Social>
-      <Copy>&copy; 2022</Copy>
+      <Copy className="nav_copy">&copy; 2022</Copy>
       <Menu>
         <Link to="/projects">
-          <Item>
+          <Item className="menu_item">
             {projectsMatch ? <Pointer layoutId="pointer" /> : null}
             projects
           </Item>
         </Link>
         <Link to="/studies">
-          <Item>
+          <Item className="menu_item">
             {studiesMatch ? <Pointer layoutId="pointer" /> : null}
             studies
           </Item>
         </Link>
         <Link to="/about">
-          <Item>
+          <Item className="menu_item">
             {aboutMatch ? <Pointer layoutId="pointer" /> : null}
             about
           </Item>
         </Link>
         <Link to="/contact">
-          <Item>
+          <Item className="menu_item">
             {contactMatch ? <Pointer layoutId="pointer" /> : null}
             contact
           </Item>

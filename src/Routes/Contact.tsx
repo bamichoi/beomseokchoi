@@ -124,26 +124,31 @@ function Contact() {
     );
   };
   return (
-    <Wrapper>
+    <Wrapper className="wrapper">
       <SideContainer
+        className="side-container"
         initial="out"
         animate="in"
         exit="out"
         variants={ParentsVariants}
         transition={ParentsTransition}
       >
-        <Title>contact_</Title>
+        <Title className="side_title">contact_</Title>
         <SideNav></SideNav>
       </SideContainer>
-      <Main>
+      <Main className="main">
         <ContactBox
+          className="main_contact"
           initial="out"
           animate="in"
           exit="out"
           variants={ParentsVariants}
           transition={ParentsTransition}
         >
-          <ContactForm onSubmit={handleSubmit(isValid)}>
+          <ContactForm
+            className="contact_form"
+            onSubmit={handleSubmit(isValid)}
+          >
             <label htmlFor="from_name">Name</label>
             <input
               {...register("from_name", { required: "Your name is required" })}
@@ -186,7 +191,7 @@ function Contact() {
             <span>{errors?.messages?.message}</span>
             <button>Send</button>
           </ContactForm>
-          <ContactInfo>
+          <ContactInfo className="contact_info">
             <span>
               <i className="fas fa-map-marker-alt"></i> &nbsp;Daegu, South Korea
             </span>
