@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/beomseokchoi/static/js/main.8dd914b9.js",
+    "main.js": "/beomseokchoi/static/js/main.6d08f33a.js",
     "index.html": "/beomseokchoi/index.html",
-    "main.8dd914b9.js.map": "/beomseokchoi/static/js/main.8dd914b9.js.map"
+    "main.6d08f33a.js.map": "/beomseokchoi/static/js/main.6d08f33a.js.map"
   },
   "entrypoints": [
-    "static/js/main.8dd914b9.js"
+    "static/js/main.6d08f33a.js"
   ]
 }
