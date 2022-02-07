@@ -40,7 +40,7 @@ const Controller = styled.div`
   display: flex;
   position: absolute;
   left: 0;
-  margin-top: 230px;
+  margin-top: 30vh;
   flex-direction: column;
   i {
     margin-bottom: 10px;
@@ -52,6 +52,7 @@ const Stylus = styled(motion.div)`
   width: fit-content;
   position: absolute;
   bottom: 0;
+  height: 60vh;
   left: 0;
   margin: auto 0;
   display: flex;
@@ -61,7 +62,7 @@ const Stylus = styled(motion.div)`
   transform-origin: bottom;
   .stylus_header {
     width: 20px;
-    height: 100px;
+    height: 15vh;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     background: rgb(152, 203, 187);
@@ -74,7 +75,7 @@ const Stylus = styled(motion.div)`
   }
   .stylus_arm {
     width: 10px;
-    height: 400px;
+    height: 60vh;
     background: rgb(152, 203, 187);
     background: linear-gradient(
       90deg,
@@ -87,10 +88,10 @@ const Stylus = styled(motion.div)`
 
 const Circle = styled(motion.div)`
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 41vw;
+  height: 41vw;
+  border-radius: 20.5vw;
   margin-right: 10px;
-  border-radius: 300px;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -98,9 +99,9 @@ const Circle = styled(motion.div)`
 `;
 
 const CircleOverlay = styled.div`
-  width: 600px;
-  height: 600px;
-  border-radius: 300px;
+  width: 41vw;
+  height: 41vw;
+  border-radius: 20.5vw;
   background: rgb(1, 1, 1);
   background: linear-gradient(
     90deg,
@@ -113,9 +114,9 @@ const CircleOverlay = styled.div`
 
 const Circle2 = styled.div`
   position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 175px;
+  width: 23vw;
+  height: 23vw;
+  border-radius: 11.5vw;
   background-color: #c29166;
   display: flex;
   justify-content: center;
@@ -123,9 +124,9 @@ const Circle2 = styled.div`
 `;
 
 const Circle3 = styled.div`
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 10vw;
   background-color: white;
   display: flex;
   justify-content: center;

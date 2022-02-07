@@ -339,13 +339,14 @@ a {
 
   .turntable_stylus {
   left: 10px;
+  height: 50vh;
   .stylus_header {
     width: 20px;
-    height: 12vh;
+    height: 15vh;
   }
   .stylus_arm {
     width: 10px;
-    height: 35vh;
+    height: 50vh;
   }
   }
 
@@ -375,35 +376,26 @@ a {
   }
 }
 
-// less than 380 x 800 e.g. iPhone SE
-@media screen and (max-width: 380px) {
-  .home_turntable {
-  width: 100%; 
-  height: 100%;
-  justify-content: flex-end; 
-  align-items: center; 
-
-  .turntable_controller {
-  left: 10px; 
-  margin-top: 0px;
-  }
-  }
+// Circle resize for e.g. iPhone SE 
+// But you can use framer-motion responsive animation!!
+@media screen and (max-width: 375px) and (min-height: 667px){
 
   .turntable_stylus {
   left: 10px;
+  height: 48vh;
   .stylus_header {
     width: 20px;
-    height: 12vh;
+    height: 15vh;
   }
   .stylus_arm {
     width: 10px;
-    height: 35vh;
+    height: 48vh;
   }
   }
 
   .turntable_circle {
   position: absolute;
-  right: -22vw; 
+  right: -19vw; 
   bottom: 20px;
   width: 105vw; 
   height: 105vw; 
@@ -426,9 +418,6 @@ a {
     }
   }
 }
-
-
-  
 `;
 
 ReactDOM.render(
