@@ -137,6 +137,7 @@ a {
   display: grid;
   width: 100%;
   padding: 0 7%;
+  grid-template-columns: repeat(3, 1fr);
   }
   .pj{
     .pj_icon {

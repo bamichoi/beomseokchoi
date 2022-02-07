@@ -72,10 +72,10 @@ function Header() {
 
   return (
     <Nav className="nav">
-      <Link to="/">
+      <Link to="/beomseokchoi">
         <Logo className="nav_logo">
           <div>Beomseok Choi</div>
-          <div>/ software engineer</div>
+          <div>/ software developer</div>
         </Logo>
       </Link>
       <Social className="nav_social">

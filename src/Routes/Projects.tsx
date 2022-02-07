@@ -30,9 +30,10 @@ const ProjectGrid = styled(motion.div)`
   position: absolute;
   right: 0;
   width: 80%;
-  display: flex;
+  gap: 20px;
   justify-content: flex-start;
   padding-left: 100px;
+  grid-template-columns: repeat(5, 1fr);
 `;
 
 const ProjectItem = styled(motion.div)`
@@ -40,6 +41,9 @@ const ProjectItem = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  span {
+    text-align: center;
+  }
 `;
 
 const ProjectIcon = styled.img`
@@ -182,15 +186,15 @@ function Projects() {
                     }}
                   />
                   <TextArea className="pj_card_text">
-                    <span>CINEACCA</span>
+                    <span>{clickedProject.name}</span>
                     <a
-                      href="https://cineacca.com"
+                      href={clickedProject.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      cineacca.com
+                      {clickedProject.url}
                     </a>
-                    <span>Student film streaming plattform</span>
+                    <span>{clickedProject.summary}</span>
                     <span>
                       {clickedProject.lang.map((item, index) =>
                         clickedProject.lang.length - 1 === index

@@ -23,6 +23,7 @@ function App() {
           }
         >
           <Route path="/" element={<Home></Home>} />
+          <Route path="/beomseokchoi" element={<Home></Home>} />
           <Route path="/projects" element={<Projects />}>
             <Route path="/projects/:projectId" element={<Projects />} />
           </Route>
