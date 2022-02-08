@@ -353,51 +353,8 @@ a {
 
   .turntable_circle {
   position: absolute;
-  right: -20vh; 
-  bottom: 20px;
-  width: 130vw; 
-  height: 130vw; 
-  border-radius: 65vw; 
-    .circle-overlay{
-      width: 130vw; 
-      height: 130vw; 
-      border-radius: 65vw; 
-    }
-    .circle2{
-      position: absolute;
-      width: 65vw; 
-      height: 65vw;
-      border-radius: 37.5vw;
-      .circle3{
-        width: 55vw; 
-        height: 55vw; 
-        border-radius: 27.5vw;
-      }
-    }
-  }
-}
-
-// Circle resize for e.g. iPhone SE 
-// But you can use framer-motion responsive animation!!
-@media screen and (max-width: 375px) and (min-height: 667px){
-
-  .turntable_stylus {
-  left: 10px;
-  height: 48vh;
-  .stylus_header {
-    width: 20px;
-    height: 15vh;
-  }
-  .stylus_arm {
-    width: 10px;
-    height: 48vh;
-  }
-  }
-
-  .turntable_circle {
-  position: absolute;
-  right: -19vw; 
-  bottom: 20px;
+  right: -20vw; 
+  bottom: 5vh;
   width: 105vw; 
   height: 105vw; 
   border-radius: 52.5vw; 
@@ -408,17 +365,18 @@ a {
     }
     .circle2{
       position: absolute;
-      width: 60vw; 
-      height: 60vw;
-      border-radius: 30vw;
+      width: 52.5vw; 
+      height: 52.5vw;
+      border-radius: 26.25vw;
       .circle3{
-        width: 50vw; 
-        height: 50vw; 
-        border-radius: 25vw;
+        width: 44vw; 
+        height: 44vw; 
+        border-radius: 22vw;
       }
     }
   }
 }
+
 `;
 
 ReactDOM.render(
