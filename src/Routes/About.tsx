@@ -125,7 +125,7 @@ function About() {
             }}
           ></ProfileImg>
           <Bio className="profile_bio">
-            <h1>Hello, I am Beomsoeok!</h1>
+            <h1>Hello, I am Beomseok!</h1>
             <p>Thank you for your visit to my portfolio website!</p>
             <p>I have been studied development for 1 year.</p>
             <p>So I still have a lot of things to learn,</p>
