@@ -54,9 +54,14 @@ const Bio = styled.div`
   p {
     margin-bottom: 1px;
   }
-  p:last-child {
+  p:nth-child(8) {
     margin-top: 15px;
     font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .notion-link {
+    text-decoration: underline;
+    cursor: pointer;
   }
 `;
 
@@ -133,6 +138,17 @@ function About() {
             <p>and making people happy with the stuff I have built.</p>
             <p>It is so amazing, isn't it?</p>
             <p>I just keep learning!</p>
+            <a
+              className="notion-link"
+              href="https://bamidev.notion.site/Bami-software-developer-3a36bd02dcbf4e2ea31b4381ed5bd8fd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt="notion"
+                src="https://img.shields.io/badge/My%20Notion%20Space-000000?style=for-the-badge&logo=Notion&logoColor=white"
+              ></img>
+            </a>
           </Bio>
         </Profile>
         <Skillset

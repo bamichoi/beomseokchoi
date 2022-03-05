@@ -49,5 +49,16 @@ export const ProjectData: IProject = {
       summary: "Official Website of Music Artist Wormol_",
       url: "https://wormol.000webhostapp.com/",
     },
+    {
+      id: 4,
+      name: "Info Study In Italia",
+      year: "2020",
+      period: "43 days",
+      lang: ["HTML", "CSS"],
+      icon: `${process.env.PUBLIC_URL}/img/projects/studyItalogo.png`,
+      thumb: `${process.env.PUBLIC_URL}/img/projects/studyItathumb.png`,
+      summary: "Information potal service for studying in Italy",
+      url: "https://bamichoi.github.io/info-study-italy",
+    },
   ],
 };
