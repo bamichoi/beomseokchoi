@@ -1,39 +1,28 @@
 # Beomseok Choi
-
-# My portfolio website
-
----
-
+My portfolio website
+  
 뱅글뱅글 턴테이블이 돌아가는 포트폴리오 웹 사이트
 
 [https://beomseokchoi.com](https://beomseokchoi.com)
 
 ## 💻개발 언어 및 환경 Languages
-
----
-
+  
 Frontend : React.js, TypeScript, Styled Component
 
 ## ⏱개발 기간 Development period
-
----
-
+  
 2022년 1월 11일 ~ 2022년 2월 13일 
 
 Jan 11, 2022 ~ Feb 13, 2022
 
 ## 🔍현재 상태 Current State
-
----
-
+  
 🟢 이용 가능
 
 Now available
 
 ## 📝 개발 후기 Development Reviews
-
----
-
+  
 ### 아이디어 Idea
 
 취업을 위한 포트폴리오 사이트. **[azzerad.com](http://azzerad.com/)** 이라는 아트 스튜디오의 웹 사이트에서 header 디자인과 Route Transition 을 참조했다. 특히 이 사이트의 Route Transiton 은 너무 멋졋고 도대체 어떻게 하는걸까 너무 신기하기만 해서 꼭 한번 시도해보고싶었다. 나는 경력도 없고, 프로젝트 경험도 부족해서 studies 메뉴를 만들어서 노마드코더에서 수료했던 챌린지도 졸업과제들과 함께 한번 채워보았다. 홈화면은 제일 마지막에 작업했는데 포트폴리오 사이트에 들어왔을때 첫인상을 어떻게 효과적으로 남길까 고민이 많았다. 애니메이션이 있으면 좋겠다싶은 생각이 들었지만 이렇다할 아이디어가 잘 떠오르지 않아서 framer-motion으로 홈화면에서 이것 저것 가지고 놀다가 턴테이블 애니메이션을 생각하게 되었고 여기에 오디오 효과와 유저와 인터렉션할 수 있는 동작이 함께하면 꽤 재미있는 결과물이 나오지 않을까 싶었다.
