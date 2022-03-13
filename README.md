@@ -37,7 +37,7 @@ Now available
 
 - Route Transition 부분에서 좀 애를 먹었습니다.  azzerad 사이트를 보면서 route 자체는 바로 전환되는데 어떻게 다른 페이지로 넘어갈 때 애니메이션이 실행되고 난뒤에 redner를 할 수 있는건지 너무 신기하고 어려웠습니다.
     
-    핵심은 AnimatePresence를 Route에 감싸주는 것에 있었습니다. 그리고 exiteBeforeEnter를 추가해주면, AnimatePresence는 다음 컴포넌트의 render전에 지금 컴포넌트의 anmimation을 마치도록 해줍니다. ([https://www.framer.com/docs/animate-presence/](https://www.framer.com/docs/animate-presence/)) 나머지는 적용할 variant를 component에 달아주면 된다. azzerad 처럼 세련되고 세분화된 transition 은 아니었지만 꽤 만족스러웠습니다. 만약 azzerad 처럼 element 별로 달리 transition 을 두고 싶다면, delayChildren 을 이용하면 간단히 구현가능할 것 같습니다.
+    핵심은 AnimatePresence를 Route에 감싸주는 것에 있었습니다. 그리고 exiteBeforeEnter를 추가해주면, AnimatePresence는 다음 컴포넌트의 render전에 지금 컴포넌트의 anmimation을 마치도록 해줍니다. ([https://www.framer.com/docs/animate-presence/](https://www.framer.com/docs/animate-presence/)) 나머지는 적용할 variant를 component에 달아주면 된다. azzerad 처럼 세련되고 세분화된 transition 은 아니었지만 꽤 만족스러웠습니다. 만약 azzerad 처럼 element 별로 달리 transition 을 두고 싶다면, delayChildren 을 이용하면 될 것 같습니다.
     
 
 - 그 다음으로 힘들었던 것은 홈의 턴테이블 에니메이션입니다. 애니메이션은 유저가 조작할 수 있는 컨트롤러와 함께 상호작용하는데, 상식적으로 생각해본다면 pause를 누르고, 다시 play를 누른다면 멈춘지점에서부터 다시 원래의 360도 회전 애니메이션을 유지해야합니다.
