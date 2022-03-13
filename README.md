@@ -58,10 +58,4 @@ Now available
 - useState의 비동기성
 - react hook form의 연습
 - framer-motion을 이용한 router transition과  다소 복잡한 애니메이션의 구현
-- emailjs 를 활용한 contact 서비스
-
-### 앞으로의 개선점 reflection
-
----
-
-- 일단 먼저 코드 리팩토링이 필요합니다. 중복되는 컴포넌트들이 너무 많고, 공용으로 사용하는 animation variant들도 따로 모듈로 빼주어야겠습니다. 특히 애니메이션이 컨트롤러와 상호작용하는 코드에 정리가 필요합니다.
+- emailjs를 활용한 이메일 전송
